@@ -35,6 +35,8 @@ public class Menu {
 		ContaPoupanca cp2 = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Lucas Matheus", 7000f, 28);
 		contas.cadastrar(cp2);
 
+		contas.listarTodas();
+
 		while (true) {
 
 			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND);
@@ -138,7 +140,6 @@ public class Menu {
 					System.out.println("Digite o Nome do titular: ");
 					leia.skip("\\R?");
 					titular = leia.nextLine();
-
 					System.out.println("Digite o Saldo da Conta (R$): ");
 					saldo = leia.nextFloat();
 
@@ -185,6 +186,7 @@ public class Menu {
 				do {
 					System.out.println("Digite o Valor do Saque (R$): ");
 					valor = leia.nextFloat();
+
 				} while (valor <= 0);
 				contas.sacar(numero, valor);
 
